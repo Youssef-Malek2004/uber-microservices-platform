@@ -6,14 +6,6 @@ A production-style, event-driven **ride-hailing backend** built as six independe
 
 ---
 
-## Demo
-
-> 📹 _Demo video placeholder — a 60–90s walkthrough: request a ride → driver match → ride completion → payment saga → live Grafana dashboards updating._
->
-> _Add the link here once recorded (`![demo](docs/demo.gif)` or a YouTube/Loom URL)._
-
----
-
 ## Architecture
 
 ```mermaid
