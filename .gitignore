@@ -1,0 +1,19 @@
+# Build
+target/
+build/
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Env / secrets
+.env
+*.local
+
+# Logs
+*.log
+logs/

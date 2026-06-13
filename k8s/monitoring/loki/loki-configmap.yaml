@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: loki-config
+  namespace: monitoring
+data:
+  local-config.yaml: |
+    auth_enabled: false
+
+    server:
+      http_listen_port: 3100
+      grpc_server_max_recv_msg_size: 16777216
+      grpc_server_max_send_msg_size: 16777216
+
+    ingester:
+      wal:
+        enabled: true
+        dir: /loki/wal
+      lifecycler:
+        address: 127.0.0.1
+        ring:
+          kvstore:
+            store: inmemory
+          replication_factor: 1
+        final_sleep: 0s
+      chunk_idle_period: 5m
+      chunk_retain_period: 30s
+
+    schema_config:
+      configs:
+        - from: 2020-10-24
+          store: boltdb-shipper
+          object_store: filesystem
+          schema: v11
+          index:
+            prefix: index_
+            period: 24h
+
+    storage_config:
+      boltdb_shipper:
+        active_index_directory: /loki/index
+        cache_location: /loki/cache
+        shared_store: filesystem
+      filesystem:
+        directory: /loki/chunks
+
+    limits_config:
+      allow_structured_metadata: true
+      enforce_metric_name: false
+      reject_old_samples: true
+      reject_old_samples_max_age: 168h
+      max_query_parallelism: 32
+      split_queries_by_interval: 0s
+      max_streams_per_user: 0
+      max_global_streams_per_user: 0
+
+    querier:
+      max_concurrent: 32
+
+    query_scheduler:
+      max_outstanding_requests_per_tenant: 4096
+
+    frontend:
+      max_outstanding_per_tenant: 4096
+
+    compactor:
+      working_directory: /loki/compactor
+      shared_store: filesystem
