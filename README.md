@@ -1,5 +1,20 @@
 # Uber-Style Ride-Hailing Microservices Platform
 
+<!-- BADGES -->
+<p align="left">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot"/>
+  <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white" alt="RabbitMQ"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus"/>
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana"/>
+</p>
+
+
 A production-style, event-driven **ride-hailing backend** built as six independently deployable Spring Boot services behind an API gateway, with polyglot persistence, a RabbitMQ saga for distributed transactions, and a full Prometheus / Grafana / Loki observability stack — deployable locally via Docker Compose or to Kubernetes.
 
 > **Note on authorship.** This started as a team university project (Advanced Computer Lab, GUC). This repository is a **cleaned, standalone showcase** of the platform. My own work centered on the **ride-service**, the **distributed saga / event flow**, and the **Kubernetes + observability infrastructure** — see [My Contribution](#my-contribution). Coursework material, grading artifacts, and teammates' personal data have been removed.
